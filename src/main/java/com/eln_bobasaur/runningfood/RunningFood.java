@@ -1,5 +1,12 @@
 package com.eln_bobasaur.runningfood;
 
+import com.eln_bobasaur.runningfood.datagen.DataGenerators;
+import com.eln_bobasaur.runningfood.datagen.ModItemModelProvider;
+import com.eln_bobasaur.runningfood.items.ModCreativeTabs;
+import com.eln_bobasaur.runningfood.items.ModItems;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -50,6 +57,9 @@ public class RunningFood
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        ModItems.register(modEventBus);
+        ModCreativeTabs.register(modEventBus);
+
         NeoForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
@@ -71,7 +81,7 @@ public class RunningFood
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
     {
-        
+
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
