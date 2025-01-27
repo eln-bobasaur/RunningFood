@@ -2,6 +2,7 @@ package com.eln_bobasaur.runningfood;
 
 import com.eln_bobasaur.runningfood.datagen.DataGenerators;
 import com.eln_bobasaur.runningfood.datagen.ModItemModelProvider;
+import com.eln_bobasaur.runningfood.datagen.structure.ModStructures;
 import com.eln_bobasaur.runningfood.items.ModCreativeTabs;
 import com.eln_bobasaur.runningfood.items.ModItems;
 import net.minecraft.data.DataGenerator;
@@ -59,6 +60,7 @@ public class RunningFood
 
         ModItems.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
+        ModStructures.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
 
